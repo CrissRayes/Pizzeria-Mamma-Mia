@@ -1,5 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Home, Pizza, NotFound } from './views'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App () {
   return (
