@@ -7,7 +7,7 @@ function App () {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <Home /> } />
-          <Route path=":pizzaId" element={ <Pizza /> } />
+          <Route path="/pizza/:id" element={ <Pizza /> } />
           <Route path="*" element={ <NotFound /> } />
         </Routes>
       </BrowserRouter>

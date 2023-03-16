@@ -1,8 +1,22 @@
+import useData from '../hooks/useData'
+
 export const Home = () => {
+  const { data } = useData()
+
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Acá van todas las pizzas</p>
-    </div>
+    <>
+      {data.map(pizza => (
+        <div key={pizza.id}>
+          <h2>{pizza.nombre}</h2>
+          <p>{pizza.precio}</p>
+          <p>{pizza.descripcion}</p>
+          <ul>
+            {pizza.ingredientes.map((ingrediente, index) => (
+              <li key={index}>{ingrediente}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </>
   )
 }
