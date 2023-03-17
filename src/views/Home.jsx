@@ -1,4 +1,4 @@
-import Card from '../components/Card'
+import { Card } from '../components/Card'
 import useData from '../hooks/useData'
 import { Container } from 'react-bootstrap'
 

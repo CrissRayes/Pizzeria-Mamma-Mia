@@ -1,6 +1,13 @@
 import formatCurrency from '../helpers/formatCurrency'
 
-const Card = ({ id, nombre, precio, descripcion, ingredientes, imagen }) => {
+export const Card = ({
+  id,
+  nombre,
+  precio,
+  descripcion,
+  ingredientes,
+  imagen,
+}) => {
   const colors = [
     'primary',
     'secondary',
@@ -15,7 +22,7 @@ const Card = ({ id, nombre, precio, descripcion, ingredientes, imagen }) => {
     <div className='col'>
       <div
         className='card h-100 shadow border-0'
-        style={{ width: '20rem' }}
+        style={{ width: '18rem' }}
       >
         <img
           src={imagen}
@@ -49,5 +56,3 @@ const Card = ({ id, nombre, precio, descripcion, ingredientes, imagen }) => {
     </div>
   )
 }
-
-export default Card
