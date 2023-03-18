@@ -1,8 +1,11 @@
 import { Container } from 'react-bootstrap'
 import { FaCartPlus } from 'react-icons/fa'
 import img1080x1080 from '../assets/img/img1080x1080.png'
+import { useParams } from 'react-router-dom'
 
 export const Pizza = () => {
+  const { id } = useParams()
+
   return (
     <Container>
       <div className='row'>
@@ -14,7 +17,7 @@ export const Pizza = () => {
           />
         </div>
         <div className='col-6'>
-          <h2 className='border-bottom'>Pizza</h2>
+          <h2 className='border-bottom'>Pizza{id}</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             voluptas, quod, quia, voluptates quae voluptatibus quibusdam
