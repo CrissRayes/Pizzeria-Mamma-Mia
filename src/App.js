@@ -1,4 +1,4 @@
-import { Carousel, Nvbar } from './components'
+import { Carousel, Footer, Nvbar } from './components'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Home, Pizza, NotFound, Cart } from './views'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,6 +16,7 @@ function App () {
           <Route path='/carrito' element={ <Cart /> } />
           <Route path="*" element={ <NotFound /> } />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

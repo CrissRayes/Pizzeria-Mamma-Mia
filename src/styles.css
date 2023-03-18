@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
 .lista-ingredientes {
   margin: 0 !important;
   padding: 0 !important;
@@ -44,8 +50,6 @@ code {
 #sobre-todo {
   z-index: 2 !important;
 }
-
-/* posicionar la cantidad del carrito */
 
 .carrito {
   position: relative;
@@ -85,4 +89,49 @@ code {
 .item-detalle {
   display: flex;
   align-items: center;
+}
+
+.footer {
+  background: #212529;
+  color: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  min-height: 12rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .derechos {
+  font-size: 0.8rem;
+  min-height: 2rem;
+  align-self: center;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.redes-icon {
+  font-size: 1.5rem;
+}
+
+.redes-icon:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nosotros {
+  margin-bottom: 1rem;
+}
+
+.derechos {
+  font-size: 0.8rem;
+  align-self: flex-end;
 }
