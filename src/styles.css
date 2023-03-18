@@ -66,3 +66,23 @@ code {
   border-radius: 50%;
   font-size: 12px;
 }
+
+.item-carrito {
+  padding: 2rem;
+}
+
+.item-descripcion {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.item-descripcion img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.item-detalle {
+  display: flex;
+  align-items: center;
+}
