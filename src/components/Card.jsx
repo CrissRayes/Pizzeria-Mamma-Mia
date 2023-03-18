@@ -1,13 +1,7 @@
 import formatCurrency from '../helpers/formatCurrency'
+import { useNavigate } from 'react-router-dom'
 
-export const Card = ({
-  id,
-  nombre,
-  precio,
-  descripcion,
-  ingredientes,
-  imagen,
-}) => {
+export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
   const colors = [
     'primary',
     'secondary',
@@ -17,6 +11,12 @@ export const Card = ({
     'info',
     'dark',
   ]
+
+  const navigate = useNavigate()
+
+  const handleVerMas = () => {
+    navigate(`/pizza/${id}`)
+  }
 
   return (
     <div className='col'>
@@ -48,7 +48,12 @@ export const Card = ({
             {formatCurrency(precio)}
           </div>
           <div className='d-flex justify-content-between'>
-            <button className='btn btn-primary'>Ver más</button>
+            <button
+              className='btn btn-primary'
+              onClick={handleVerMas}
+            >
+              Ver más
+            </button>
             <button className='btn btn-success'>Añadir</button>
           </div>
         </div>
