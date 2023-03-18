@@ -44,3 +44,25 @@ code {
 #sobre-todo {
   z-index: 2 !important;
 }
+
+/* posicionar la cantidad del carrito */
+
+.carrito {
+  position: relative;
+}
+
+.carrito-icon {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.cantidad-carrito {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f44336;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 50%;
+  font-size: 12px;
+}

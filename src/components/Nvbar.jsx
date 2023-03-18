@@ -1,5 +1,5 @@
 import { Navbar, Container } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { FaPizzaSlice, FaShoppingCart } from 'react-icons/fa'
 
 export const Nvbar = () => {
   return (
@@ -9,17 +9,16 @@ export const Nvbar = () => {
         variant='dark'
         className='sticky-top'
       >
-        <Container className='justify-content-between'>
+        <Container className='justify-content-between text-white'>
           <Navbar.Brand href='/'>
             <div className='nav-icons-imgs'>
-              <img
-                src=''
-                alt='Logo Pizzería'
-              />
+              <FaPizzaSlice size={40} /> Pizzería Mamma Mia!
             </div>
           </Navbar.Brand>
-          <div>
-            <NavLink to='/'>Carrito</NavLink>
+
+          <div className='carrito'>
+            <FaShoppingCart className='carrito-icon' />
+            <div className='cantidad-carrito'>1</div>
           </div>
         </Container>
       </Navbar>
