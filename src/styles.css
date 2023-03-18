@@ -40,6 +40,7 @@ code {
   z-index: 1;
 }
 
+/* usado en el slider del home */
 #sobre-todo {
   z-index: 2 !important;
 }
