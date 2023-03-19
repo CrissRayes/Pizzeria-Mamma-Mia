@@ -12,7 +12,7 @@ function App () {
         <Carousel />
         <Routes>
           <Route path="/" element={ <Home /> } />
-          <Route path="/pizza/:id" element={ <Pizza /> } />
+          <Route path="/pizzas/:id" element={ <Pizza /> } />
           <Route path='/carrito' element={ <Cart /> } />
           <Route path="*" element={ <NotFound /> } />
         </Routes>

@@ -15,7 +15,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
   const navigate = useNavigate()
 
   const handleVerMas = () => {
-    navigate(`/pizza/${id}`)
+    navigate(`/pizzas/${id}`)
   }
 
   return (
