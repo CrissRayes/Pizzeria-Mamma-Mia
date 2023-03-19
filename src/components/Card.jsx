@@ -2,16 +2,7 @@ import formatCurrency from '../helpers/formatCurrency'
 import { useNavigate } from 'react-router-dom'
 
 export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
-  const colors = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'dark',
-  ]
-
+  const colors = ['verde', 'amarillo', 'naranjo', 'cafe', 'rojo']
   const navigate = useNavigate()
 
   const handleVerMas = () => {
@@ -34,7 +25,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
             <ul className='lista-ingredientes'>
               {ingredientes.map((ingrediente, index) => (
                 <li
-                  className={`badge rounded-pill bg-${colors[index]} text-white me-1`}
+                  className={`badge rounded-pill ${colors[index]} text-white me-1`}
                   key={index}
                 >
                   {ingrediente}
@@ -49,12 +40,12 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
           </div>
           <div className='d-flex justify-content-between'>
             <button
-              className='btn btn-primary'
+              className='btn amarillo'
               onClick={handleVerMas}
             >
               Ver más
             </button>
-            <button className='btn btn-success'>Añadir</button>
+            <button className='btn verde'>Añadir</button>
           </div>
         </div>
       </div>

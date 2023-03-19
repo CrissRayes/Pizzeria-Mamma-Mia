@@ -1,3 +1,11 @@
+:root {
+  --verde: #648907;
+  --amarillo: #f7ad45;
+  --naranjo: #df5603;
+  --rojo: #8f1901;
+  --cafe: #a66c48;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,6 +18,31 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.verde {
+  background-color: var(--verde) !important;
+  color: white !important;
+}
+
+.amarillo {
+  background-color: var(--amarillo) !important;
+  color: white !important;
+}
+
+.naranjo {
+  background-color: var(--naranjo) !important;
+  color: white !important;
+}
+
+.rojo {
+  background-color: var(--rojo) !important;
+  color: white !important;
+}
+
+.cafe {
+  background-color: var(--cafe) !important;
+  color: white !important;
 }
 
 .grid {
@@ -64,7 +97,7 @@ code {
   position: absolute;
   top: 0;
   right: 0;
-  background: #f44336;
+  background: var(--naranjo);
   color: #fff;
   padding: 0 5px;
   border-radius: 50%;
