@@ -1,5 +1,6 @@
 import formatCurrency from '../helpers/formatCurrency'
 import { useNavigate } from 'react-router-dom'
+import { FaCartPlus } from 'react-icons/fa'
 
 export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
   const colors = ['verde', 'amarillo', 'naranjo', 'cafe', 'rojo']
@@ -14,6 +15,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
       <div
         className='card h-100 shadow border-0'
         style={{ width: '18rem' }}
+        onClick={handleVerMas}
       >
         <img
           src={imagen}
@@ -38,14 +40,10 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
           <div className='mb-3 fw-bolder text-end'>
             {formatCurrency(precio)}
           </div>
-          <div className='d-flex justify-content-between'>
-            <button
-              className='btn amarillo'
-              onClick={handleVerMas}
-            >
-              Ver más
+          <div className='d-flex justify-content-end'>
+            <button className='btn verde'>
+              Añadir <FaCartPlus />
             </button>
-            <button className='btn verde'>Añadir</button>
           </div>
         </div>
       </div>
