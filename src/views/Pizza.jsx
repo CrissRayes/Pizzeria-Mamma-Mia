@@ -42,9 +42,9 @@ export const Pizza = () => {
           </ul>
           <div className='d-flex justify-content-between'>
             <h5>Precio: {formatCurrency(pizza.price)}</h5>
-            <button className='btn btn-primary'>
+            <button className='btn verde'>
               Añadir
-              <FaCartPlus />
+              <FaCartPlus className='ms-2' />
             </button>
           </div>
         </div>
