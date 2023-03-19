@@ -59,6 +59,18 @@ code {
 .card {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  -webkit-border-radius: 1rem !important;
+  -moz-border-radius: 1rem !important;
+  border-radius: 1rem !important;
+}
+
+.card-img-top {
+  -webkit-border-top-left-radius: 1rem !important;
+  -webkit-border-top-right-radius: 1rem !important;
+  -moz-border-radius-topleft: 1rem !important;
+  -moz-border-radius-topright: 1rem !important;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
 }
 
 .card:hover {
