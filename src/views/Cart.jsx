@@ -29,6 +29,7 @@ export const Cart = () => {
             return (
               <ItemCart
                 key={item.id}
+                id={item.id}
                 nombre={item.nombre}
                 precio={item.precio}
                 cantidad={item.cantidad}

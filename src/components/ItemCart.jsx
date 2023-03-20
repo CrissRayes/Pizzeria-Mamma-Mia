@@ -1,8 +1,10 @@
 import formatCurrency from '../helpers/formatCurrency'
 import { useContext } from 'react'
 import CartContext from '../my_context'
+import { useNavigate } from 'react-router-dom'
 
 export const ItemCart = ({
+  id,
   nombre,
   precio,
   cantidad,
@@ -10,6 +12,7 @@ export const ItemCart = ({
   ingredientes,
 }) => {
   const { cart, setCart } = useContext(CartContext)
+  const navigate = useNavigate()
 
   const handleAdd = () => {
     const newCart = cart.map(item => {
@@ -46,11 +49,19 @@ export const ItemCart = ({
     setCart(newCart)
   }
 
+  const handleViewProduct = () => {
+    navigate(`/pizzas/${id}`)
+  }
+
   return (
     <div>
       <div className='item-carrito shadow rounded mb-2 '>
         <div className='d-flex justify-content-between align-items-center'>
-          <div className='item-descripcion'>
+          <div
+            className='item-descripcion'
+            style={{ cursor: 'pointer' }}
+            onClick={handleViewProduct}
+          >
             <img
               alt='pizza'
               src={imagen}
