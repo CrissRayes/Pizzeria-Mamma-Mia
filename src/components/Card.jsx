@@ -14,12 +14,12 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
     navigate(`/pizzas/${id}`)
   }
 
+  // TODO: Crear un componente para el botón de añadir al carrito
   const addToCart = () => {
-    const pizza = {
+    const pizzaCart = {
       id,
       nombre,
       precio,
-      ingredientes,
       imagen,
       cantidad: 1,
     }
@@ -35,7 +35,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
       })
       setCart(newCart)
     } else {
-      setCart([...cart, pizza])
+      setCart([...cart, pizzaCart])
     }
   }
 
