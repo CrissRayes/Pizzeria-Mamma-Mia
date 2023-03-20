@@ -4,6 +4,7 @@
   --naranjo: #df5603;
   --rojo: #8f1901;
   --cafe: #a66c48;
+  --gris: #e0e0e0;
 }
 
 body {
@@ -13,6 +14,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* para posicionar el footer al fondo */
+  position: relative !important;
+  padding-bottom: 20em !important;
+  min-height: 100vh !important;
+  /* fin pisicionar footer al fondo */
 }
 
 code {
@@ -43,6 +49,10 @@ code {
 .cafe {
   background-color: var(--cafe) !important;
   color: white !important;
+}
+
+.gris {
+  background-color: var(--gris) !important;
 }
 
 .grid {
@@ -135,14 +145,32 @@ code {
   align-items: center;
 }
 .item-descripcion img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 
 .item-detalle {
   display: flex;
   align-items: center;
+}
+
+.resumen-cart {
+  padding: 1rem;
+}
+
+.btn-operacion {
+  /* quitar rounded de bootstrap */
+  border-radius: 0 !important;
+}
+
+.boton-comprar {
+  width: 100%;
+  /* desactiva el boton */
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  /* fin desactiva boton */
 }
 
 .footer {
@@ -154,6 +182,10 @@ code {
   text-align: center;
   display: flex;
   flex-direction: column;
+  /* para posicionar el footer al fondo */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer .derechos {
