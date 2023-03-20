@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
 import CartContext from '../my_context'
 import { useContext } from 'react'
+import { AddToCartBtn } from './AddToCartBtn'
 
 export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
   const { cart, setCart } = useContext(CartContext)
@@ -70,12 +71,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
             {formatCurrency(precio)}
           </div>
           <div className='d-flex justify-content-end'>
-            <button
-              className='btn verde'
-              onClick={addToCart}
-            >
-              Añadir <FaCartPlus />
-            </button>
+            <AddToCartBtn addToCart={addToCart} />
           </div>
         </div>
       </div>

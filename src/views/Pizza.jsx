@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import formatCurrency from '../helpers/formatCurrency'
 import CartContext from '../my_context'
 import { useContext } from 'react'
+import { AddToCartBtn } from '../components'
 
 export const Pizza = () => {
   const { cart, setCart } = useContext(CartContext)
@@ -83,13 +84,7 @@ export const Pizza = () => {
           </ul>
           <div className='d-flex justify-content-between'>
             <h5>Precio: {formatCurrency(pizza.precio)}</h5>
-            <button
-              className='btn verde'
-              onClick={addToCart}
-            >
-              Añadir
-              <FaCartPlus className='ms-2' />
-            </button>
+            <AddToCartBtn addToCart={addToCart} />
           </div>
         </div>
       </div>
