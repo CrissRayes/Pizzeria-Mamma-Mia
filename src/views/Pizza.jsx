@@ -37,7 +37,6 @@ export const Pizza = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  //TODO: Crear un componente para el botón de añadir al carrito
   const addToCart = () => {
     const pizzaCart = {
       id,
