@@ -1,6 +1,5 @@
 import formatCurrency from '../helpers/formatCurrency'
 import { useNavigate } from 'react-router-dom'
-import { FaCartPlus } from 'react-icons/fa'
 import CartContext from '../my_context'
 import { useContext } from 'react'
 import { AddToCartBtn } from './AddToCartBtn'
@@ -15,7 +14,6 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
     navigate(`/pizzas/${id}`)
   }
 
-  // TODO: Crear un componente para el botón de añadir al carrito
   const addToCart = () => {
     const pizzaCart = {
       id,
