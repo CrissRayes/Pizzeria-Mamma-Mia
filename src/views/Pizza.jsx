@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap'
-import { FaCartPlus } from 'react-icons/fa'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import formatCurrency from '../helpers/formatCurrency'
