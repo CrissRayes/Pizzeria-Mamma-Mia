@@ -1,9 +1,11 @@
 import { Card } from '../components/Card'
-import useData from '../hooks/useData'
 import { Container } from 'react-bootstrap'
+import { useContext } from 'react'
+import CartContext from '../my_context'
 
 export const Home = () => {
-  const { data } = useData()
+  const { data } = useContext(CartContext)
+
   return (
     <Container>
       <div className='row row-cols-1 row-cols-md-4 g-4'>

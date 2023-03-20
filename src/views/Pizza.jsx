@@ -7,34 +7,15 @@ import { useContext } from 'react'
 import { AddToCartBtn } from '../components'
 
 export const Pizza = () => {
-  const { cart, setCart } = useContext(CartContext)
-
-  const { id } = useParams()
+  const { data, cart, setCart } = useContext(CartContext)
   const [pizza, setPizza] = useState({})
+  const { id } = useParams()
 
-  const getPizza = async () => {
-    const url = 'http://localhost:3000/pizzas.json'
-    const response = await fetch(url)
-    const data = await response.json()
-    const pizzas = data.map(pizza => {
-      return {
-        id: pizza.id,
-        nombre: pizza.name,
-        precio: pizza.price,
-        ingredientes: pizza.ingredients,
-        descripcion: pizza.desc,
-        imagen: pizza.img,
-      }
-    })
-
-    const pizzaMatch = pizzas.find(pizza => pizza.id === id)
-    setPizza(pizzaMatch)
-  }
+  const pizzaMatch = data.find(pizza => pizza.id === id)
 
   useEffect(() => {
-    getPizza()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    setPizza(pizzaMatch)
+  }, [pizzaMatch])
 
   const addToCart = () => {
     const pizzaCart = {
@@ -66,23 +47,23 @@ export const Pizza = () => {
       <div className='row'>
         <div className='col-6'>
           <img
-            src={pizza.imagen}
+            src={pizza?.imagen}
             alt='pizza'
             className='img-fluid'
           />
         </div>
         <div className='col-6'>
-          <h2 className='border-bottom text-capitalize'>{pizza.nombre}</h2>
-          <p>{pizza.descripcion}</p>
+          <h2 className='border-bottom text-capitalize'>{pizza?.nombre}</h2>
+          <p>{pizza?.descripcion}</p>
           <h4>Ingredientes:</h4>
           <ul>
-            {pizza.ingredientes &&
+            {pizza?.ingredientes &&
               pizza.ingredientes.map(ingrediente => (
                 <li key={ingrediente}>{ingrediente}</li>
               ))}
           </ul>
           <div className='d-flex justify-content-between'>
-            <h5>Precio: {formatCurrency(pizza.precio)}</h5>
+            <h5>Precio: {formatCurrency(pizza?.precio)}</h5>
             <AddToCartBtn addToCart={addToCart} />
           </div>
         </div>
