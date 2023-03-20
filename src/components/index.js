@@ -1,4 +1,5 @@
 export * from './AddToCartBtn'
+export * from './BubbleAlert'
 export * from './Card'
 export * from './Carousel'
 export * from './Footer'
