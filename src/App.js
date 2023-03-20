@@ -10,9 +10,6 @@ function App () {
 
   const [cart, setCart] = useState( [] )
 
-
-
-
   return (
     <div className="App">
       <CartContext.Provider value={ { cart, setCart } }>
