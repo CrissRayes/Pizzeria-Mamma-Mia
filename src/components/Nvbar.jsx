@@ -12,7 +12,6 @@ export const Nvbar = () => {
     navigate('/')
   }
 
-  // mostrar cuantos elementos hay en el carrito
   const cantidad = cart.reduce((acc, item) => {
     return acc + item.cantidad
   }, 0)
