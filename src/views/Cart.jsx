@@ -1,39 +1,26 @@
 import { Container } from 'react-bootstrap'
 import { ItemCart } from '../components/ItemCart'
+import { useContext } from 'react'
+import CartContext from '../my_context'
 
 export const Cart = () => {
-  // array de ejemplo para mostrar el componente ItemCart
-  // luego se debe eliminar este array y obtener los datos desde el array del carrito
-  const items = [
-    {
-      id: 1,
-      nombre: 'Pizza',
-      precio: 20990,
-      cantidad: 1,
-      image: '',
-    },
-    {
-      id: 2,
-      nombre: 'Hamburguesa',
-      precio: 10990,
-      cantidad: 1,
-      image: '',
-    },
-  ]
+  const { cart } = useContext(CartContext)
+  console.log(cart)
 
   return (
     <Container>
       <h1>Carrito</h1>
-
-      {items.map(item => (
-        <ItemCart
-          key={item.id}
-          nombre={item.nombre}
-          precio={item.precio}
-          cantidad={item.cantidad}
-          image={item.image}
-        />
-      ))}
+      {cart.map(item => {
+        return (
+          <ItemCart
+            key={item.id}
+            nombre={item.nombre}
+            precio={item.precio}
+            cantidad={item.cantidad}
+            imagen={item.imagen}
+          />
+        )
+      })}
 
       <div>
         <p>Total: $20.990</p>
