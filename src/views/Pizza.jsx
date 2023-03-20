@@ -43,6 +43,7 @@ export const Pizza = () => {
       nombre: pizza.nombre,
       precio: pizza.precio,
       imagen: pizza.imagen,
+      ingredientes: pizza.ingredientes,
       cantidad: 1,
     }
 
