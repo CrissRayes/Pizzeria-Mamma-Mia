@@ -20,6 +20,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
       nombre,
       precio,
       imagen,
+      ingredientes,
       cantidad: 1,
     }
 
