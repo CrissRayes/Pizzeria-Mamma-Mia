@@ -16,7 +16,10 @@ export const Nvbar = () => {
         className='sticky-top'
       >
         <Container className='justify-content-between text-white'>
-          <Navbar.Brand onClick={handleBackHome}>
+          <Navbar.Brand
+            onClick={handleBackHome}
+            style={{ cursor: 'pointer' }}
+          >
             <div className='nav-icons-imgs'>
               <FaPizzaSlice size={40} /> Pizzería Mamma Mia!
             </div>
