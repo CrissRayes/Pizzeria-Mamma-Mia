@@ -1,8 +1,12 @@
 import formatCurrency from '../helpers/formatCurrency'
 import { useNavigate } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
+import CartContext from '../my_context'
+import { useContext } from 'react'
 
 export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
+  const { cart, setCart } = useContext(CartContext)
+
   const colors = ['verde', 'amarillo', 'naranjo', 'cafe', 'rojo']
   const navigate = useNavigate()
 
@@ -10,17 +14,42 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
     navigate(`/pizzas/${id}`)
   }
 
+  const addToCart = () => {
+    const pizza = {
+      id,
+      nombre,
+      precio,
+      ingredientes,
+      imagen,
+      cantidad: 1,
+    }
+
+    const isInCart = cart.find(item => item.id === id)
+
+    if (isInCart) {
+      const newCart = cart.map(item => {
+        if (item.id === id) {
+          return { ...item, cantidad: item.cantidad + 1 }
+        }
+        return item
+      })
+      setCart(newCart)
+    } else {
+      setCart([...cart, pizza])
+    }
+  }
+
   return (
     <div className='col'>
       <div
         className='card h-100 shadow border-0'
         style={{ width: '18rem' }}
-        onClick={handleVerMas}
       >
         <img
           src={imagen}
           className='card-img-top'
           alt={nombre}
+          onClick={handleVerMas}
         />
         <div className='card-body'>
           <div style={{ height: '50px', overflow: 'auto' }}>
@@ -41,7 +70,10 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
             {formatCurrency(precio)}
           </div>
           <div className='d-flex justify-content-end'>
-            <button className='btn verde'>
+            <button
+              className='btn verde'
+              onClick={addToCart}
+            >
               Añadir <FaCartPlus />
             </button>
           </div>
