@@ -22,7 +22,13 @@ export const Cart = () => {
           <div>
             <div>
               <h3 className='d-inline'>Carrito</h3>
-              <span> ({cantidad} productos)</span>
+              <span>
+                {cantidad === 0
+                  ? ' (No hay productos)'
+                  : ` (${cantidad} productos)`}
+
+                {/* ({cantidad} productos) */}
+              </span>
             </div>
           </div>
           {cart.map(item => {
