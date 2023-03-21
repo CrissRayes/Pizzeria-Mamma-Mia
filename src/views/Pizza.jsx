@@ -5,8 +5,10 @@ import formatCurrency from '../helpers/formatCurrency'
 import CartContext from '../my_context'
 import { useContext } from 'react'
 import { AddToCartBtn } from '../components'
+import { useNavigate } from 'react-router-dom'
 
 export const Pizza = () => {
+  const navigate = useNavigate()
   const { data, cart, setCart } = useContext(CartContext)
   const [pizza, setPizza] = useState({})
   const { id } = useParams()
@@ -42,6 +44,10 @@ export const Pizza = () => {
     }
   }
 
+  const handleGoBack = () => {
+    navigate(-1)
+  }
+
   return (
     <Container>
       <div className='row'>
@@ -66,6 +72,12 @@ export const Pizza = () => {
             <h5>Precio: {formatCurrency(pizza?.precio)}</h5>
             <AddToCartBtn addToCart={addToCart} />
           </div>
+          <p
+            onClick={handleGoBack}
+            style={{ cursor: 'pointer' }}
+          >
+            Volver
+          </p>
         </div>
       </div>
     </Container>
