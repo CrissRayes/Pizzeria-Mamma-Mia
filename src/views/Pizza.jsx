@@ -69,7 +69,13 @@ export const Pizza = () => {
               ))}
           </ul>
           <div className='d-flex justify-content-between'>
-            <h5>Precio: {formatCurrency(pizza?.precio)}</h5>
+            <h5>
+              Precio:{' '}
+              <span style={{ fontFamily: 'Lato' }}>
+                {formatCurrency(pizza?.precio)}
+              </span>
+            </h5>
+
             <AddToCartBtn addToCart={addToCart} />
           </div>
           <p
