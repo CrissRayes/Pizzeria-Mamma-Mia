@@ -79,8 +79,13 @@ h5 {
 }
 
 .grid {
+  margin: 0 auto !important;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(350px, 100%), 1fr)
+  ) !important;
   grid-gap: 1rem;
 }
 

@@ -43,7 +43,7 @@ export const Card = ({ id, nombre, precio, ingredientes, imagen }) => {
     <div className='col'>
       <div
         className='card h-100 shadow border-0'
-        style={{ width: '18rem' }}
+        // style={{ width: '18rem' }}
       >
         <img
           src={imagen}
